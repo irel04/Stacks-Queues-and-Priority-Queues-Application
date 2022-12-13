@@ -8,6 +8,10 @@ class Queue:
     def __len__(self):
         return len(self.__elements)
     
+    def __iter__(self):
+        while len(self) > 0:
+            yield self.dequeue()
+            
     def enqueue(self, element):
         self.__elements.append(element)
     
