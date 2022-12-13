@@ -1,4 +1,4 @@
-from queues import PriorityQueue
+from queues2 import PriorityQueue
 
 CRITICAL = 3
 IMPORTANT = 2
