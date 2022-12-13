@@ -2,8 +2,11 @@
 from collections import deque
 
 class Queue:
-    def __init__(self):
+    def __init__(self, __*elements):
         self.__elements = deque()
+
+    def __len__(self):
+        return len(self.__elements)
     
     def enqueue(self, element):
         self.__elements.append(element)
