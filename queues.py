@@ -3,22 +3,22 @@ from collections import deque
 
 class Queue:
     def __init__(self, *elements):
-        self.__elements = deque(elements)
+        self._elements = deque(elements)
 
     def __len__(self):
-        return len(self.__elements)
+        return len(self._elements)
     
     def __iter__(self):
         while len(self) > 0:
             yield self.dequeue()
 
     def enqueue(self, element):
-        self.__elements.append(element)
+        self._elements.append(element)
     
     def dequeue(self):
-        return self.__elements.popleft()
+        return self._elements.popleft()
 
 # Creating a class STACK
 class Stack(Queue):
     def dequeue(self):
-        return self.__elements.pop()
+        return self._elements.pop()
