@@ -17,3 +17,8 @@ class Queue:
     
     def dequeue(self):
         return self.__elements.popleft()
+
+# Creating a class STACK
+class Stack(Queue):
+    def dequeue(self):
+        return self.__elements.pop()
