@@ -1,4 +1,4 @@
-from queues2 import PriorityQueue
+from queues3 import PriorityQueue
 
 CRITICAL = 3
 IMPORTANT = 2
@@ -11,6 +11,6 @@ messages.enqueue_with_priority(CRITICAL, "Brake pedal depressed")
 messages.enqueue_with_priority(IMPORTANT, "Hazard lights turned on")
 
 print("\n")
-print(messages.deqeue())
+print(messages.dequeue())
 
 
