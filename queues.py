@@ -2,8 +2,8 @@
 from collections import deque
 
 class Queue:
-    def __init__(self, __*elements):
-        self.__elements = deque()
+    def __init__(self, *elements):
+        self.__elements = deque(elements)
 
     def __len__(self):
         return len(self.__elements)
@@ -11,7 +11,7 @@ class Queue:
     def __iter__(self):
         while len(self) > 0:
             yield self.dequeue()
-            
+
     def enqueue(self, element):
         self.__elements.append(element)
     
