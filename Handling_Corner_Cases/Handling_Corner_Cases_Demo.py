@@ -9,6 +9,12 @@ messages = PriorityQueue()
 messages.enqueue_with_priority(CRITICAL, "Brake pedal depressed")
 messages.enqueue_with_priority(IMPORTANT, "Hazard lights turned on")
 
+@dataclass
+class Message:
+     event: str
+     
+wipers = Message("Windshield wipers turned on")
+
 print("\n")
 print(messages.dequeue())
 
