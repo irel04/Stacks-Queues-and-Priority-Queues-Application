@@ -16,6 +16,9 @@ class Message:
 wipers = Message("Windshield wipers turned on")
 hazard_lights = Message("Hazard lights turned on")
 
+wipers < hazard_lights
+
+
 
 print("\n")
 print(messages.dequeue())
