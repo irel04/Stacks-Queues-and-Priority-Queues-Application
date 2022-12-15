@@ -37,3 +37,10 @@ class PriorityQueue:
 
     def dequeue(self):
         return heappop(self._elements)[-1]
+
+
+# Class - IterableMixin 
+class IterableMixin:
+    def __len__(self):
+        return len(self._elements)
+    
