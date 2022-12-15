@@ -13,3 +13,8 @@ print("\n\n", graph.nodes["london"])
 nodes, graph = load_graph("roadmap.dot", City.from_dict)
 print("\n\n", nodes["london"])
 print(graph)
+
+# Printing Neighbors using the neighbor method
+for neighbor in graph.neighbors(nodes["london"]):
+    print(neighbor.name)
+
