@@ -16,7 +16,7 @@ class City(NamedTuple):
     def from_dict(cls, attrs):
         return cls(
             name=attrs["xlabel"],
-            country=attrs["country"],
+            country=attrs["country"],       
             year=int(attrs["year"]) or None,
             latitude=float(attrs["latitude"]),
             longitude=float(attrs["longitude"]),
@@ -45,12 +45,14 @@ def breadth_first_traverse(graph, source):
                 visited.add(neighbor)
                 queue.enqueue(neighbor)
 
-# Defined a search function using breadth the logic of the algorithm which was defined earlier
-def breadth_first_search(graph, source, predicate):
-    for node in breadth_first_traverse(graph, source):
+def search(traverse, graph, source, predicate, order_by=None):
+    for node in traverse(graph, source, order_by):
         if predicate(node):
             return node
 
+# Defined a search function using breadth the logic of the algorithm which was defined earlier
+def breadth_first_search(graph, source, predicate, order_by=None):
+    return search(breadth_first_traverse, graph, source, predicate, order_by)
 
 def retrace(previous, source, destination):
     path = deque()
