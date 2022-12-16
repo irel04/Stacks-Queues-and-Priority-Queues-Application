@@ -44,7 +44,6 @@ async def main(args):
         await session.close()
 
 
-
 async def worker(worker_id, session, queue, links, max_depth):
     print(f"[{worker_id} starting]", file=sys.stderr)
     while True:
