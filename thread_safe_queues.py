@@ -1,6 +1,9 @@
 import argparse
 from queue import LifoQueue, PriorityQueue, Queue
 import threading
+from random import randint
+from time import sleep
+
 
 # Defining a QUEUE_TYPES dictionary
 QUEUE_TYPES = {
@@ -47,3 +50,27 @@ PRODUCTS = (
     ":thread:",
     ":yo-yo:",
 )
+
+# It extends the threading. Its instances wont prevent your program from exiting when the main thread is done
+class Worker(threading.Thread):
+    def __init__(self, speed, buffer):
+        super().__init__(daemon=True)
+        self.speed = speed
+        self.buffer = buffer
+        self.product = None
+        self.working = False
+        self.progress = 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
