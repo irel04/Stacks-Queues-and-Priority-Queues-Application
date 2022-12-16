@@ -14,10 +14,3 @@ for node in nx.dfs_tree(graph, nodes["edinburgh"]):
 else:
     print("Not found")
 
-
-from graph import (
-    City,
-    load_graph,
-    depth_first_traverse,
-    depth_first_search as dfs,
-)
