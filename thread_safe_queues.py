@@ -1,7 +1,7 @@
 import argparse
 from queue import LifoQueue, PriorityQueue, Queue
 import threading
-from random import randint
+from random import choice, randint
 from time import sleep
 
 
@@ -60,12 +60,30 @@ class Worker(threading.Thread):
         self.product = None
         self.working = False
         self.progress = 0
+    
 
+    @property
+    # return a string either the name of the product or work message indicating worker is currently idle
+    def state(self):
+        if self.working:
+            return f"{self.product} ({self.progress}%)"
+        return ":zzz: Idle"
 
+    # Methods resets and put to sleep in random seconds 
+    def simulate_idle(self):
+        self.product = None
+        self.working = False
+        self.progress = 0
+        sleep(randint(1, 3))
 
-
-
-
+    # Picks random delay seconds adjusted to the worker's speed and progress through work
+    def simulate_work(self):
+        self.working = True
+        self.progress = 0
+        delay = randint(1, 1 + 15 // self.speed)
+        for _ in range(100):
+            sleep(delay / 100)
+            self.progress += 1
 
 
 
