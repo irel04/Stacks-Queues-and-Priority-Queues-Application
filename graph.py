@@ -1,5 +1,6 @@
 from typing import NamedTuple
 import networkx as nx
+from queues import Queue
 
 # Class for City 
 class City(NamedTuple):
@@ -31,3 +32,14 @@ def load_graph(filename, node_factory):
         (nodes[name1], nodes[name2], weights)
         for name1, name2, weights in graph.edges(data=True)
 )
+
+# Defined function for system transverse 
+def breadth_first_traverse(graph, source):
+    queue = Queue(source)
+    visited = {source}
+    while queue:
+        yield (node := queue.dequeue())
+        for neighbor in graph.neighbors(node):
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.enqueue(neighbor)
