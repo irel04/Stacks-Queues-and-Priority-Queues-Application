@@ -21,7 +21,7 @@ async def main(args):
     session = aiohttp.ClientSession()
     try:
         links = Counter()
-        queue = asyncio.PriorityQueue()
+        queue = asyncio.LifoQueue()
         tasks = [
             asyncio.create_task(
                 worker(
@@ -46,7 +46,6 @@ async def main(args):
         display(links)
     finally:
         await session.close()
-
 
 async def worker(worker_id, session, queue, links, max_depth):
     print(f"[{worker_id} starting]", file=sys.stderr)
@@ -94,3 +93,9 @@ def display(links):
 
 if __name__ == "__main__":
     asyncio.run(main(parse_args()))
+
+
+from async_queues import Job
+job1 = Job("http://localhost/")
+job2 = Job("https://localhost:8080/")
+job1 < job2
