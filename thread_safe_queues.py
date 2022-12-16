@@ -3,6 +3,9 @@ from queue import LifoQueue, PriorityQueue, Queue
 import threading
 from random import choice, randint
 from time import sleep
+from dataclasses import dataclass, field
+from enum import IntEnum
+
 
 # VIEW CLASS
 from itertools import zip_longest
