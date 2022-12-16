@@ -5,10 +5,8 @@ from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 import sys
 from typing import NamedTuple
-
-
-
 import aiohttp
+
 
 async def main(args):
     session = aiohttp.ClientSession()
@@ -17,6 +15,10 @@ async def main(args):
         display(links)
     finally:
         await session.close()
+
+class Job(NamedTuple):
+    url: str
+    depth: int = 1
 
 def parse_args():
     parser = argparse.ArgumentParser()
