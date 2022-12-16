@@ -20,3 +20,8 @@ print(" → ".join(
     city.name
     for city in shortest_path(graph, city1, city2, by_latitude)
 ))
+
+print("\nDetermining if two nodes are connected:")
+# This line of code will only execute a boolean value because it only determine if the city are connected 
+print("Belfast and Glasgow are connected: ", connected(graph, nodes["belfast"], nodes["glasgow"]))
+print("Belfast and Derry are connected: ", connected(graph, nodes["belfast"], nodes["derry"]))
