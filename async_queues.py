@@ -17,7 +17,7 @@ async def main(args):
     session = aiohttp.ClientSession()
     try:
         links = Counter()
-        queue = asyncio.Queue()
+        queue = asyncio.PriorityQueue()
         tasks = [
             asyncio.create_task(
                 worker(
@@ -42,6 +42,7 @@ async def main(args):
         display(links)
     finally:
         await session.close()
+
 
 
 async def worker(worker_id, session, queue, links, max_depth):
