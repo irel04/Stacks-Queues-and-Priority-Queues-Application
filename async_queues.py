@@ -1,6 +1,8 @@
 import argparse
 import asyncio
 from collections import Counter
+from urllib.parse import urljoin
+from bs4 import BeautifulSoup
 
 import aiohttp
 
