@@ -3,6 +3,10 @@ import asyncio
 from collections import Counter
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup
+import sys
+from typing import NamedTuple
+
+
 
 import aiohttp
 
@@ -40,3 +44,4 @@ def parse_links(url, html):
         href = anchor.get("href").lower()
         if not href.startswith("javascript:"):
             yield urljoin(url, href)
+
