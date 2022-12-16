@@ -5,7 +5,7 @@ thread_safe_queues_PrioQueue.py -> py thread_safe_queues.py --queue lifo
 thread_safe_queues_PrioQueues.py -> py thread_safe_queues_PrioQueues.py --queue heap
 
 # For importing Local Server from python run these commands
-cd venv/
+cd env/
 python -m http.server
 
 # For asynchronous queues
