@@ -15,7 +15,9 @@ print(" → ".join(city.name for city in shortest_path(graph, city1, city2)))
 def by_latitude(city):
     return -city.latitude
 
-" → ".join(
+
+print("\n\nShortest path latitude: ")
+print(" → ".join(
     city.name
     for city in shortest_path(graph, city1, city2, by_latitude)
-)
+))
