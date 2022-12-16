@@ -43,3 +43,10 @@ def breadth_first_traverse(graph, source):
             if neighbor not in visited:
                 visited.add(neighbor)
                 queue.enqueue(neighbor)
+
+# Defined a search function using breadth the logic of the algorithm which was defined earlier
+def breadth_first_search(graph, source, predicate):
+    for node in breadth_first_traverse(graph, source):
+        if predicate(node):
+            return node
+
