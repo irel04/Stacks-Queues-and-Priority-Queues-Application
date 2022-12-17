@@ -2,7 +2,7 @@ Commands that are necessary to run specific demo:
 
 # For thread-safe queues
 thread_safe_queues_PrioQueue.py -> py thread_safe_queues.py --queue lifo
-thread_safe_queues_PrioQueues.py -> py thread_safe_queues_PrioQueues.py --queue heap
+thread_safe_queues_PrioQueues.py -> py thread_safe_queues_PrioQueue.py --queue heap
 
 # For importing Local Server from python run these commands
 cd env/
